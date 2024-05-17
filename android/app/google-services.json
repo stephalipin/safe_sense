@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1074192037630",
+    "project_id": "safe-sense-ver1",
+    "storage_bucket": "safe-sense-ver1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1074192037630:android:470381e2f0b563c55557af",
+        "android_client_info": {
+          "package_name": "com.example.safe_sense"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9ZbHWTuOKd2nGMr57vuP5ijmaErsGzR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
