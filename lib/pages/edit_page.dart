@@ -75,7 +75,10 @@ class _EditPageState extends State<EditPage> {
           ),
         ),
         centerTitle: true,
-        backgroundColor:  Color.fromRGBO(64, 131, 93, 1),
+        backgroundColor:  Color.fromRGBO(18, 43, 29, 1),
+        iconTheme: const IconThemeData(
+          color: Colors.white, // Set the back button color here
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -83,20 +86,20 @@ class _EditPageState extends State<EditPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Username',
+              'Name',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
             TextFormField(
               controller: _usernameController,
               decoration: const InputDecoration(
-                hintText: 'Enter username',
+                hintText: 'Enter name',
                 border: OutlineInputBorder(),
               ),
             ),
             const SizedBox(height: 20),
             const Text(
-              'Contact',
+              'Contact Number',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
@@ -114,7 +117,7 @@ class _EditPageState extends State<EditPage> {
                 if(newContactValue != contact){
 
                   String contactValue = _contactController.text;
-                  final String message = "First: \n$contactValue";
+                  const String message = "First";
                   final Uri url = Uri(
                     queryParameters: {'body' : message},
                     scheme: 'sms',
@@ -132,7 +135,7 @@ class _EditPageState extends State<EditPage> {
                   
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromRGBO(64, 131, 93, 1),
+                backgroundColor: const Color.fromRGBO(18, 43, 29, 1),
               ),
               child: const Text('Save Changes', style: TextStyle(color: Colors.white, fontSize: 15),),
               

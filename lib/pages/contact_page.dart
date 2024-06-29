@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:safe_sense/pages/edit_page.dart';
 import 'package:safe_sense/pages/add_contact_page.dart';
 import 'package:safe_sense/pages/edit_page_second.dart';
+import 'package:safe_sense/components/text_box.dart';
 
 class ContactPage extends StatefulWidget {
   const ContactPage({super.key});
@@ -66,11 +67,14 @@ class _ContactPageState extends State<ContactPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          '  ',
+          ' Contacts ',
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
-        backgroundColor: const Color.fromRGBO(64, 131, 93, 1),
+        backgroundColor: const Color.fromRGBO(18, 43, 29, 1),
+        iconTheme: const IconThemeData(
+          color: Colors.white, // Set the back button color here
+        ),
         elevation: 0,
       ),
       body: StreamBuilder<DocumentSnapshot>(
@@ -82,6 +86,53 @@ class _ContactPageState extends State<ContactPage> {
             final hasSecondContact = userData.containsKey('second_contact');
             return ListView(
               children: [
+                const SizedBox(height: 50), 
+
+                // profile pic
+                const Icon(
+                  Icons.person,
+                  size: 100,
+                ),
+
+                const SizedBox(height: 10), 
+
+                //user email
+                Text(
+                  currentUser.email!,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.grey[700]
+                  ),
+                ),
+
+                const SizedBox(height: 50), 
+
+                // user details
+                const Padding(
+                  padding: EdgeInsets.only(left: 20.0),
+                  child: Text(
+                    'My Details',
+                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600, fontSize: 18.0),
+                  ),
+                ),
+
+
+                // username
+                MyTextBox(
+                  text: userData['username'], 
+                  sectionName: 'Name',
+                ),
+
+                MyTextBox(
+                  text: userData['address'], 
+                  sectionName: 'Adress',
+                ),
+
+                //contact number
+                MyTextBox(
+                  text: userData['contact'], 
+                  sectionName: 'Contact Number',
+                ),
                 const SizedBox(height: 50), 
                 // User details
                 const Padding(

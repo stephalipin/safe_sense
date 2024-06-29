@@ -125,7 +125,10 @@ Future<void> addUserInfo() async {
           ),
         ),
         centerTitle: true,
-        backgroundColor:  Color.fromRGBO(64, 131, 93, 1),
+        backgroundColor:  Color.fromRGBO(18, 43, 29, 1),
+        iconTheme: const IconThemeData(
+          color: Colors.white, // Set the back button color here
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -162,7 +165,7 @@ Future<void> addUserInfo() async {
             ElevatedButton(
               onPressed: () async {
                 String contactValue = _numberController.text;
-                final String message = "Second: \n$contactValue";
+                const String message = "Second";
                 final Uri url = Uri(
                   queryParameters: {'body' : message},
                   scheme: 'sms',
@@ -176,7 +179,7 @@ Future<void> addUserInfo() async {
                 addContact();
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromRGBO(64, 131, 93, 1),
+                backgroundColor: const Color.fromRGBO(18, 43, 29, 1),
               ),
               child: const Text('Save Contact', style: TextStyle(color: Colors.white, fontSize: 15),),
             ),

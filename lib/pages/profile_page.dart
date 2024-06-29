@@ -126,21 +126,21 @@ class _ProfilePageState extends State<ProfilePage> {
                 MyTextBox(
                   text: userData['username'], 
                   sectionName: 'Username',
-                  onPressed:() => editField('username'),
+                  // onPressed:() => editField('username'),
                 ),
 
                 //contact number
                 MyTextBox(
                   text: userData['contact'], 
                   sectionName: 'Contact',
-                  onPressed:() => editField('contact'),
+                  // onPressed:() => editField('contact'),
                 ),
 
                 // registered link
                 MyTextBox(
                   text: userData['url'], 
                   sectionName: 'Registered Link',
-                  onPressed:() => editField('url'),
+                  // onPressed:() => editField('url'),
                 ),
 
               ],

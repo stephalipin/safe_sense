@@ -47,8 +47,8 @@ class _EditPageSecondState extends State<EditPageSecond> {
     final newContact = _second_contact_numberController.text.trim();
     try {
       await usersCollection.doc(currentUser.email).update({
-        'username': newUsername,
-        'contact': newContact,
+        'second_contact': newUsername,
+        'second_contact_number': newContact,
       });
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -79,7 +79,10 @@ class _EditPageSecondState extends State<EditPageSecond> {
           ),
         ),
         centerTitle: true,
-        backgroundColor:  Color.fromRGBO(64, 131, 93, 1),
+        backgroundColor:  Color.fromRGBO(18, 43, 29, 1),
+        iconTheme: const IconThemeData(
+          color: Colors.white, // Set the back button color here
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -87,20 +90,20 @@ class _EditPageSecondState extends State<EditPageSecond> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Username',
+              'Name',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
             TextFormField(
               controller: _second_contactController,
               decoration: const InputDecoration(
-                hintText: 'Enter username',
+                hintText: 'Enter name',
                 border: OutlineInputBorder(),
               ),
             ),
             const SizedBox(height: 20),
             const Text(
-              'Contact',
+              'Contact Number',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
@@ -118,7 +121,7 @@ class _EditPageSecondState extends State<EditPageSecond> {
                 if(newContactValue != previousContactNumber){
 
                   String contactValue = _second_contact_numberController.text;
-                  final String message = "Second: \n$contactValue";
+                  const String message = "Second";
                   final Uri url = Uri(
                     queryParameters: {'body' : message},
                     scheme: 'sms',
@@ -136,7 +139,7 @@ class _EditPageSecondState extends State<EditPageSecond> {
                   
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromRGBO(64, 131, 93, 1),
+                backgroundColor: const Color.fromRGBO(18, 43, 29, 1),
               ),
               child: const Text('Save Changes', style: TextStyle(color: Colors.white, fontSize: 15),),
               

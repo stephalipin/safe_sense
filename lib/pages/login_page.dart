@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      backgroundColor: Color.fromRGBO(64, 131, 93, 1),
+      backgroundColor: Color.fromRGBO(18, 43, 29, 1),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -143,34 +143,34 @@ class _LoginPageState extends State<LoginPage> {
           
               // Button
               Button(
-                text: "Sign In",
+                text: "Login",
                 onTap: signUserIn,
               ),
           
               const SizedBox(height: 15),
               // Register
-               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Not a member? ',
-                    style: TextStyle(
-                      color: Color.fromARGB(229, 254, 254, 254),
-                    ),
-                  ),
-                  const SizedBox(width: 4),
-                  GestureDetector(
-                    onTap: widget.onTap,
-                    child: const Text(
-                      'Register now',
-                      style: TextStyle(
-                        color: Color.fromARGB(244, 158, 208, 249),
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              //  Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     const Text(
+              //       'Not a member? ',
+              //       style: TextStyle(
+              //         color: Color.fromARGB(229, 254, 254, 254),
+              //       ),
+              //     ),
+              //     const SizedBox(width: 4),
+              //     GestureDetector(
+              //       onTap: widget.onTap,
+              //       child: const Text(
+              //         'Signup',
+              //         style: TextStyle(
+              //           color: Color.fromARGB(244, 158, 208, 249),
+              //           fontWeight: FontWeight.bold
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // ),
           
           ]),
         ),

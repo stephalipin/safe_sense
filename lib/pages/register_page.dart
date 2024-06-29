@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_sms/flutter_sms.dart';
+import 'package:safe_sense/pages/terms_and_condition.dart';
 
 
 class RegisterPage extends StatefulWidget{
@@ -99,13 +100,13 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      backgroundColor: Color.fromRGBO(64, 131, 93, 1),
+      backgroundColor: Color.fromRGBO(18, 43, 29, 1),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 75),
+              const SizedBox(height: 50),
           
           
               const Text(
@@ -124,7 +125,7 @@ class _RegisterPageState extends State<RegisterPage> {
         
               MyTextField(
                 controller: usernameController,
-                hintText: 'Username',
+                hintText: 'Name',
                 obscureText: false,
               ),
           
@@ -186,7 +187,41 @@ class _RegisterPageState extends State<RegisterPage> {
                 text: "Sign Up",
               ),
           
-              const SizedBox(height: 15),
+              const SizedBox(height: 25),
+              // Terms and Condition
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'By signing up, you agree to IBHS\'s ',
+                    style: TextStyle(
+                      fontSize: 12.0,
+                      color: Color.fromARGB(229, 254, 254, 254),
+                    ),
+                  ),
+                  const SizedBox(width: 4),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const TermsAndConditionsPage(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      'Terms and Conditions.',
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 123, 189, 243),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12.0,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 10),
               // Register
                Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -194,7 +229,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   const Text(
                     'Already have an account? ',
                     style: TextStyle(
-                      fontSize: 15.0,
+                      fontSize: 12.0,
                       color: Color.fromARGB(229, 254, 254, 254),
                     ),
                   ),
@@ -202,10 +237,11 @@ class _RegisterPageState extends State<RegisterPage> {
                   GestureDetector(
                     onTap: widget.onTap,
                     child: const Text(
-                      'Login now',
+                      'Login.',
                       style: TextStyle(
                         color: Color.fromARGB(255, 123, 189, 243),
-                        fontWeight: FontWeight.bold
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12.0
                       ),
                     ),
                   ),
